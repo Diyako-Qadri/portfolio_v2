@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion, MotionConfig, Variants } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-
+import { Lato } from 'next/font/google';
 type MenuItem = {
   name: string;
   link: string;
@@ -27,6 +27,9 @@ const menuItem: MenuItem[] = [
     link: '/#contact',
   },
 ];
+
+
+const lato = Lato({ subsets: ['latin'], weight: ['400', '700'] });
 
 const MobMenu = () => {
   const [active, setActive] = useState<boolean>(false);
@@ -117,7 +120,7 @@ const MobMenu = () => {
                   onClick={handleMenuItemClick}
                 >
                   <motion.p
-                    className="my-6 text-lg font-medium"
+                    className={`my-6 text-lg font-medium" ${lato.className}}`}
                     custom={index}
                     initial="hidden"
                     animate="visible"

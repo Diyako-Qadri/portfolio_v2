@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root {
   --background: #f4efef;
   --foreground: #171717;
@@ -27,6 +28,55 @@ body {
   }
 }
 
-.heroFlex{
-  flex: 0 0 calc(40% - 12px);
+.gothic {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+@media screen and (min-width: 765px) {
+  .heroFlex {
+    flex: 0 0 calc(40% - 12px);
+  }
+}
+
+.primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:  #576ded99;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.7s ease-in-out;
+  z-index: -1;
+}
+.primary:hover::before {
+  transform: scaleX(1) !important;
+}
+@font-face {
+  font-family: "Beyond";
+  src: url("../../public/font/beyond-webfont.woff")format("woff");
+  src: url("../../public/font/beyond-webfont.woff2")format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fireside";
+  src: url("../../public/font/fireside_demo-webfont.woff")format("woff");
+  src: url("../../public/font/fireside_demo-webfont.woff2")format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes move-wheel {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(1rem);
+  }
 }
